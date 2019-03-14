@@ -1,0 +1,107 @@
+@import '@/global/assets/scss/syntax-highlight.scss';
+@import '@/global/assets/scss/variables.scss';
+@import '@/global/assets/font/Lato-Regular.ttf';
+@import url('https://fonts.googleapis.com/css?family=Comfortaa:300,400,700');
+
+
+// Spectre CSS
+@import "node_modules/spectre.css/src/mixins";
+@import "node_modules/spectre.css/src/variables";
+@import "node_modules/spectre.css/src/layout";
+@import "node_modules/spectre.css/src/utilities/_position";
+@import "node_modules/spectre.css/src/utilities/_divider";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+
+  // font-family: 'Comfortaa', Arial, sans-serif;
+  font-family: $font-family;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  color: $color-text;
+  font-size: $font-size;
+  line-height: $font-size;
+
+  overflow-y: scroll;
+}
+
+p {
+  line-height: 1em;
+  margin: 0 0 1em 0;
+}
+
+span {
+  line-height: 1em;
+  margin: 0;
+}
+
+small,
+.small {
+  font-size: 0.75rem;
+}
+
+.light {
+  color: $color-secondary;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6, {
+  margin-top: 0em;
+  margin-bottom: 1em;
+  font-weight: 200;
+  line-height: 1em;
+}
+
+h1 {
+  font-size: 2rem;
+}
+h2 {
+  font-size: 1.75rem;
+}
+h3 {
+  font-size: 1.5rem;
+}
+h4 {
+  font-size: 1.2rem;
+}
+h5 {
+  font-size: 1rem;
+}
+h6 {
+  font-size: 0.8rem;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+  &:visited {
+    color: $color-text;
+  }
+}
+
+.container {
+  .row {
+    margin: 0 auto;
+    max-width: 800px;
+  }
+}
+
+.text-center {
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}

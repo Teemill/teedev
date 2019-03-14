@@ -1,0 +1,12 @@
+.click-transition {
+  transition:
+    background-color $anim-time-l,
+    color $anim-time-m;
+}
+
+.click-transition:active {
+  background-color: $color-highlight;
+  transition:
+    background-color 0s,
+    color 0s;
+}
