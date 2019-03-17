@@ -17,6 +17,7 @@ export default {
   getters: {
     getTestState(state) {
       console.log('Get State');
+      console.log('shit');
       return state.testState;
     },
     getTestStateFunc: state => (a) => {

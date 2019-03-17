@@ -25,6 +25,8 @@ module.exports = {
     'no-underscore-dangle': ['error', { allowAfterThis: true }],
     'import/extensions': 'off',
     'vue/no-use-v-if-with-v-for': 'off',
+    'class-methods-use-this': 'off',
+    'lines-between-class-members': 'off',
   },
   parserOptions: {
     parser: 'babel-eslint',

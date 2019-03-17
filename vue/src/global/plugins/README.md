@@ -1,7 +1,7 @@
 
 # Vue Plugins
-Vue plugins... Look in the docs.. I'm not explaining it...
- 
+Include Vue plugins here
+https://vuejs.org/v2/guide/plugins.html
 
 ## File Structure
 ```

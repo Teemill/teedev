@@ -93,18 +93,18 @@ export default {
       }
 
       const propsString = this.compilePropsToString(props);
-      exampleString = exampleString.replace(
+      /* exampleString = exampleString.replace(
         /{{ props }}/,
         propsString,
-      );
+      ); */
 
       const eventsString = this.compileEventsToString(events);
-      exampleString = exampleString.replace(
+      /* exampleString = exampleString.replace(
         /{{ events }}/,
         eventsString,
-      );
+      ); */
 
-      return exampleString;
+      // return exampleString;
     },
   },
   data() {
