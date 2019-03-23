@@ -32,10 +32,9 @@ module.exports = {
     loaderOptions: {
       sass: {
         data: `
-            @import "@/global/assets/scss/core.scss";
-            @import "@/global/assets/scss/variables.scss";
-            @import "@/global/assets/scss/transitions.scss";
-          `,
+          @import "@/global/assets/scss/variables.scss";
+          @import "@/global/assets/scss/transitions.scss";
+        `,
       },
     },
   },

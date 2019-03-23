@@ -1,6 +1,9 @@
 Teemill style guide.
 Most of these are suggested changes from phpcs.
  
+I want a complete style guide you say? Well... I say.. want a job done right, do it your self.
+How about them apples?
+
 # PHP
 ```diff
 Line limit

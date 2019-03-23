@@ -1,18 +1,22 @@
 <template>
   <div id="app">
     <theme theme="default">
-      <slot/>
+      <layout>
+        <slot/>
+      </layout>
     </theme>
   </div>
 </template>
 
 <script>
+import Layout from './Layout';
 import Theme from './Theme';
 
 export default {
   name: 'shell',
 
   components: {
+    Layout,
     Theme,
   },
 };

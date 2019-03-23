@@ -26,6 +26,8 @@ export default class Loader {
   }
 
   run(context, scope) {
+    console.log(typeof context);
+
     const items = this.get(context, scope);
 
     Loader.load(items);
@@ -103,10 +105,10 @@ export default class Loader {
     return success;
   }
 
+
   /**
    * Unload
    */
-
   static unloadScope(scopeName) {
     const loaderStats = new LoaderStats();
 
