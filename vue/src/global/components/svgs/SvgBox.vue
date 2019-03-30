@@ -1,5 +1,11 @@
 <template>
-  <rect class="teedev-svg-box" :x="x" :y="y" :width="w" :height="h"/>
+  <rect
+    class="teedev-svg-box"
+    :x="w < 0 ? x + w : x"
+    :y="h < 0 ? y + h : y"
+    :width="w < 0 ? -w : w"
+    :height="h < 0 ? -h : h"
+  />
 </template>
 
 <script>
@@ -13,9 +19,3 @@ export default {
   },
 };
 </script>
-
-<style lang="scss" scoped>
-  .teedev-svg-box {
-    stroke: #000;
-  }
-</style>
