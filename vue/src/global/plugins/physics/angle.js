@@ -1,6 +1,14 @@
 export default class Angle {
-  constructor(angle) {
+  constructor(angle = 0) {
     this.angle = angle;
+  }
+
+  get radians() {
+    return (this.angle / 180) * Math.PI;
+  }
+
+  get degrees() {
+    return this.angle * (180 / Math.PI);
   }
 
   add(value) {
@@ -34,12 +42,12 @@ export default class Angle {
   }
 
   toDegrees() {
-    this.angle = this.angle * (180 / Math.PI);
+    this.angle = this.degrees;
     return this;
   }
 
   toRadians() {
-    this.angle = (this.angle / 180) * Math.PI;
+    this.angle = this.radians;
     return this;
   }
 }

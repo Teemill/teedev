@@ -1,7 +1,5 @@
 <template>
   <div class="layout">
-    [{{$store.state.route.meta.layout}}]
-    <none-layout />
     <slot />
   </div>
 </template>

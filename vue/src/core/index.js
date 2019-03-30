@@ -15,6 +15,7 @@ import './assets/scss/core.scss';
 import './layouts';
 
 Vue.config.productionTip = false;
+Vue.config.performance = true;
 
 Vue.use(Vuex);
 Vue.use(VueRouter);

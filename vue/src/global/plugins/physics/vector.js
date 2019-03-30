@@ -1,4 +1,4 @@
-import Angle from '@/global/plugins/helpers/angle';
+import Angle from '@/global/plugins/physics/angle';
 
 function round(value, decimals) {
   const multiple = 10 ** decimals;
@@ -102,6 +102,7 @@ export default class Vector {
   }
 
   rotateAround(vector, angle) {
+    // eslint-disable-next-line
     angle = angle.toRadians().angle;
 
     const xDiff = this.x - vector.x;

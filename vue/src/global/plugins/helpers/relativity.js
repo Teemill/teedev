@@ -1,4 +1,4 @@
-import Vector from '@/global/plugins/helpers/vector';
+import Vector from '@/global/plugins/physics/vector';
 
 export default class Relativity {
   constructor(element) {
