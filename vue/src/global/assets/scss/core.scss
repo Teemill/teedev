@@ -3,17 +3,12 @@
 @import '@/global/assets/font/Lato-Regular.ttf';
 @import url('https://fonts.googleapis.com/css?family=Comfortaa:300,400,700');
 
-
 // Spectre CSS
 @import "node_modules/spectre.css/src/mixins";
 @import "node_modules/spectre.css/src/variables";
 @import "node_modules/spectre.css/src/layout";
 @import "node_modules/spectre.css/src/utilities/_position";
 @import "node_modules/spectre.css/src/utilities/_divider";
-
-* {
-  box-sizing: border-box;
-}
 
 body {
   margin: 0;
@@ -54,7 +49,7 @@ h2,
 h3,
 h4,
 h5,
-h6, {
+h6 {
   margin-top: 0em;
   margin-bottom: 1em;
   font-weight: 200;

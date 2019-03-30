@@ -3,16 +3,24 @@ import Vuex from 'vuex';
 import VueRouter from 'vue-router';
 import { sync } from 'vuex-router-sync';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+import Shell from './components/Shell';
 
-import './vconsole';
-// import './dom-collector';
+// Import Core Helpers
 import './helpers';
+import './vconsole';
+
+// Import Core Styles
+import './assets/scss/core.scss';
+
+import './layouts';
 
 Vue.config.productionTip = false;
+Vue.config.performance = true;
 
 Vue.use(Vuex);
 Vue.use(VueRouter);
 
+Vue.component('shell', Shell);
 Vue.component('font-awesome-icon', FontAwesomeIcon);
 
 Vuex.Store.prototype.getter = function getter(type) {

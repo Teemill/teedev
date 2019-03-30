@@ -7,11 +7,12 @@
 </template>
 
 <script>
+import '@/global/assets/scss/core.scss';
+
 import Shell from '@/core/components/Shell';
 
 import NoneLayout from '@/global/layouts/None';
 import StandardLayout from '@/global/layouts/Standard';
-import { setTimeout } from 'timers';
 // import domCollector from '@/core/dom-collector';
 
 export default {

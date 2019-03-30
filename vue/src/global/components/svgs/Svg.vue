@@ -1,5 +1,5 @@
 <template>
-  <svg class="teedev-svg" width="400" height="200" viewBox="0 0 400 200">
+  <svg class="teedev-svg" width="500" height="500" viewBox="0 0 500 500">
     <slot/>
   </svg>
 </template>
@@ -12,6 +12,7 @@ export default {
 
 <style lang="scss" scoped>
   .teedev-svg {
+    margin: 1em;
     transform: translate(0.5px, 0.5px);
   }
 </style>
