@@ -5,6 +5,8 @@ import '@/global';
 
 import App from './App.vue';
 
+import './pages';
+
 // What the fuck is this Charles?
 // import { Guards as GlobalGuards } from '@/global/router';
 // console.log(GlobalGuards);
