@@ -68,20 +68,14 @@ export default {
       this.passwordHidden = !this.passwordHidden;
     },
   },
-  theme: $theme => (`
-    .teedev-input {
-      .underline {
-        background-color: ${$theme.colors.primary};
-      }
 
-      input:focus ~ .placeholder {
-        color: ${$theme.colors.primary};
-      }
-      &.error input:focus ~ .placeholder {
-        color: ${$theme.colors.primary};
-      }
-    }
-  `),
+  created() {
+    console.log('Input Created');
+  },
+
+  mounted() {
+    console.log('Input Mounted');
+  },
 };
 </script>
 

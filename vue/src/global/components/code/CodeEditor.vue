@@ -64,7 +64,7 @@ export default {
 <style lang="scss">
   .ace_editor {
     width: 100%;
-    min-height: 400px;
+    min-height: 100px;
     margin: 0;
     font-size: 1em;
     font-family: 'Fira Code';

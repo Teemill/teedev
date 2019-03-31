@@ -2,7 +2,7 @@ import { BaseLoader } from '.';
 import { Store } from '@/core';
 
 const load = (item) => {
-  Store.registerModule([...item.modulePath], module);
+  Store.registerModule([...item.modulePath], item.module);
 };
 
 const unload = (item) => {
@@ -15,6 +15,7 @@ const get = (item) => {
     .replace(/^\/|\/$/g, '');
 
   item.name = itemFileName.replace(/\//g, '-');
+  item.module = item.module.default;
   item.modulePath = itemFileName.split('/');
 
   return item;
