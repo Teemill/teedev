@@ -20,11 +20,11 @@ export default {
 <style lang="scss" scoped>
 .teedev-fixed-sidebar {
   display: flex;
-  
+
   .content {
     flex-grow: 1;
   }
-  
+
   .sidebar {
     position: relative;
     flex-shrink: 0;

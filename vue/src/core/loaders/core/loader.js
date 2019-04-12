@@ -103,10 +103,10 @@ export default class Loader {
     return success;
   }
 
+
   /**
    * Unload
    */
-
   static unloadScope(scopeName) {
     const loaderStats = new LoaderStats();
 

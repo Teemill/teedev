@@ -39,10 +39,10 @@ export default {
   input {
     padding: 1em 0;
     flex-grow: 1;
-    
+
     background: none;
     border: none;
-    
+
     font-family: $font-family;
     font-size: 1em;
     color: $color-text;

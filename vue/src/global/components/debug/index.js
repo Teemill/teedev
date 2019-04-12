@@ -1,3 +1,3 @@
 export default {
-  DebugOverlay: () => import(/* webpackChunkName: "TeeDevDebug" */ './DebugOverlay'),
+  // DebugOverlay: () => import(/* webpackChunkName: "TeeDevDebug" */ './DebugOverlay'),
 };
