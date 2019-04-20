@@ -1,4 +1,4 @@
-import Angle from '@/global/plugins/physics/angle';
+import { Angle } from '@/global/plugins/physics';
 
 function round(value, decimals) {
   const multiple = 10 ** decimals;
@@ -118,5 +118,21 @@ export default class Vector {
     );
 
     return this;
+  }
+
+  round(places = 2) {
+    const mul = 10 ** places;
+
+    this.x = (Math.round(this.x * mul) / mul);
+    this.y = (Math.round(this.y * mul) / mul);
+
+    return this;
+  }
+
+  static random(min, max) {
+    return new Vector(
+      (Math.random() * (max.x - min.x)) + min.x,
+      (Math.random() * (max.y - min.y)) + min.y,
+    );
   }
 }
