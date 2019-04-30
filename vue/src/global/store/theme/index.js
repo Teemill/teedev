@@ -29,7 +29,7 @@ export default {
         },
       },
 
-      purple: {
+      default: {
         name: 'purple',
         logo: PurpleLogo,
         colors: {

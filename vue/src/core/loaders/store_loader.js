@@ -1,8 +1,8 @@
 import { BaseLoader } from '.';
 import { Store } from '@/core';
 
-const load = (item) => {
-  Store.registerModule([...item.modulePath], module);
+const load = ({ modulePath, module }) => {
+  Store.registerModule([...modulePath], module);
 };
 
 const unload = (item) => {
@@ -16,6 +16,7 @@ const get = (item) => {
 
   item.name = itemFileName.replace(/\//g, '-');
   item.modulePath = itemFileName.split('/');
+  item.module = item.module.default;
 
   return item;
 };
