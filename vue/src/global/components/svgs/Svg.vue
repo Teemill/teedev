@@ -13,6 +13,6 @@ export default {
 <style lang="scss" scoped>
   .teedev-svg {
     margin: 1em;
-    transform: translate(0.5px, 0.5px);
+    // transform: translate(0.5px, 0.5px);
   }
 </style>

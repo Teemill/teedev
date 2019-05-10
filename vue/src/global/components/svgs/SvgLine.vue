@@ -5,9 +5,11 @@
 <script>
 export default {
   name: 'teedev-svg-line',
+
   props: {
     points: Array,
   },
+
   computed: {
     pathString() {
       let string = '';
@@ -32,5 +34,7 @@ export default {
   .teedev-svg-line {
     fill: none;
     stroke: #000;
+
+    transform: translate(0.5px, 0.5px);
   }
 </style>

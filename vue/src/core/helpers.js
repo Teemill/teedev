@@ -22,3 +22,18 @@ Vue.unuse = (plugin, options) => {
     plugin.uninstall(Vue, options);
   }
 };
+
+/**
+ * @name testFunc
+ * @description A test function
+ *
+ * @param {Object} test The test thingy
+ * @param {String} abc The abc thingy
+ *
+ * @return {Void}
+ */
+const testFunc = (test, abc) => {
+  console.log(test, abc);
+};
+
+testFunc({}, 'HEllo')

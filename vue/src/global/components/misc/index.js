@@ -3,4 +3,5 @@ export default {
   ScrollDownIcon: () => import(/* webpackChunkName: "TeeDevMisc" */ './ScrollDownIcon'),
   UserProfileWidget: () => import(/* webpackChunkName: "TeeDevMisc" */ './UserProfileWidget'),
   ErrorMessage: () => import(/* webpackChunkName: "TeeDevMisc" */ './ErrorMessage'),
+  Animation: () => import(/* webpackChunkName: "TeeDevMisc" */ './Animation'),
 };

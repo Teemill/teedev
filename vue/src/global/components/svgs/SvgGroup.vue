@@ -19,6 +19,7 @@ export default {
       type: Number,
       default: 0,
     },
+
     y: {
       type: Number,
       default: 0,

@@ -18,13 +18,13 @@ export default class FrameQueue {
     }
   }
 
-  processQueue() {
+  processQueue(time) {
     const queueBuffer = this.queue;
     this.queue = [];
 
     queueBuffer.forEach((item) => {
       if (typeof item === 'function') {
-        item();
+        item(time);
       }
     });
 

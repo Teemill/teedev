@@ -11,6 +11,7 @@
 <script>
 export default {
   name: 'teedev-svg',
+
   props: {
     x: Number,
     y: Number,
@@ -19,3 +20,10 @@ export default {
   },
 };
 </script>
+
+<style lang="scss" scoped>
+.teedev-svg-box {
+  transform: translate(0.5px, 0.5px);
+}
+</style>
+
