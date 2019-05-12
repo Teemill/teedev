@@ -20,6 +20,10 @@ module.exports = {
   rules: {
     'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
+    'no-multi-spaces': 'off',
+    'class-methods-use-this': 'off',
+    'no-underscore-dangle': 'off',
+    'prefer-rest-params': 'off',
     'linebreak-style': 'off',
     'no-param-reassign': 'off',
     'no-underscore-dangle': ['error', { allowAfterThis: true }],
