@@ -1,7 +1,5 @@
 <template>
   <div v-resize="onResize">
-    {{mousePosition}}
-    {{testAngle.value}}
     <canvas
       ref="canvas"
       class="teedev-canvas"
@@ -51,6 +49,7 @@ export default {
     canvas: null,
     mousePosition: new Vector(0, 0),
     testAngle: new Angle(0),
+    testVec: new Vector(0, 0),
   }),
 
   methods: {
@@ -70,10 +69,12 @@ export default {
     },
 
     onMouseMove(e) {
-      this.mousePosition.x = e.clientX - 200;
-      this.mousePosition.y = e.clientY - 200;
+      this.mousePosition.x = e.offsetX;
+      this.mousePosition.y = e.offsetY;
 
-      this.testAngle.value = e.clientX - 200;
+      this.testAngle.value = e.offsetX;
+      this.testVec.x = (e.offsetY / 1000) + 1;
+      this.testVec.y = (e.offsetY / 1000) + 1;
 
       this.canvas.render();
     },
@@ -93,14 +94,6 @@ export default {
       })
     );
 
-    this.canvas.addObject(
-      new CanvasRectangle({
-        position: new Vector(136, 104),
-        size: new Vector(5, 5),
-        fill: '#fff',
-      })
-    );
-
     // this.canvas.addObject(
     //   new CanvasRectangle({
     //     position: new Vector(100, 200),
@@ -117,14 +110,22 @@ export default {
     //   })
     // );
 
+    const images = [];
+
+    for (let x = 0; x < 1000; x += 10) {
+      for (let y = 0; y < 1000; y += 10) {
+        images.push(new Vector(x, y));
+      }     
+    }
+
     this.canvas.addObject(
       new CanvasRectangle({
         position: new Vector(300, 200),
-        angle: new Angle(20), // this.testAngle,
+        angle: new Angle(0), // this.testAngle,
         size: new Vector(100, 100),
+        scale: this.testVec,
         fill: '#fff',
         children: [
-
           new CanvasRectangle({
             position: new Vector(0, 0),
             size: new Vector(10, 10),
@@ -138,37 +139,32 @@ export default {
               obj.position.x = (dx * transform.m11) + (dy * transform.m12);
               obj.position.y = (dx * transform.m21) + (dy * transform.m22);
             },
-          }),
-          new CanvasRectangle({
-            position: new Vector(100, 0),
-            size: new Vector(10, 10),
-            fill: '#f00',
-            beforeRender: (obj, ctx) => {
-              obj.position.x = this.mousePosition.x;
-              obj.position.y = this.mousePosition.y;
-            },
+
+            children: [
+              new CanvasRectangle({
+                position: new Vector(0, 0),
+                size: new Vector(50, 50),
+                fill: '#000',
+                children: [
+                  ...images.map((imagePosition) => {
+                    return new CanvasRectangle({
+                      position: imagePosition,
+                      size: new Vector(30, 30),
+                      src: 'https://images.pexels.com/photos/39811/pexels-photo-39811.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=1920&w=1080',
+                      fill: '#fff',
+                      stroke: '#fff',
+                    });
+                  }),
+                ],
+              }),
+            ],
           }),
 
-          // new CanvasRectangle({
-          //   position: new Vector(10, 10),
-          //   size: new Vector(10, 10),
-          //   fill: '#f00',
-          // }),
-          // new CanvasRectangle({
-          //   position: new Vector(30, 30),
-          //   size: new Vector(50, 50),
-          //   angle: new Angle(-22.5),
-          //   fill: '#000',
-          //   children: [
-          //     new CanvasImage({
-          //       position: new Vector(10, 10),
-          //       size: new Vector(30, 30),
-          //       src: 'https://images.pexels.com/photos/39811/pexels-photo-39811.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=1920&w=1080',
-          //       fill: '#fff',
-          //       stroke: '#fff',
-          //     }),
-          //   ],
-          // }),
+          new CanvasRectangle({
+            position: new Vector(10, 10),
+            size: new Vector(10, 10),
+            fill: '#f00',
+          }),
         ],
       })
     );
