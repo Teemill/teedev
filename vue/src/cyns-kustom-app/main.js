@@ -1,9 +1,8 @@
 // Oi.. Get your dirty mits of my code.
 
 import { Boot } from '@/core';
-import '@/global';
-
 import App from './App.vue';
+import '@/global';
 
 import './pages';
 
