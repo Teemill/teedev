@@ -10,8 +10,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
-
 .teedev-footer {
   height: 6em;
   background-color: $color-background;
