@@ -1,9 +1,15 @@
 <template>
   <div id="app">
     <theme theme="default">
-      <layout>
-        <slot/>
-      </layout>
+      <div class="content">
+        <layout>
+          <transition name="page-fade" mode="out-in">
+            <div :key="$route.path">
+              <slot/>
+            </div>
+          </transition>
+        </layout>
+      </div>
     </theme>
   </div>
 </template>
@@ -22,10 +28,18 @@ export default {
 };
 </script>
 
-<style lang="scss">
-  body {
-    padding: 0;
-    margin: 0;
-    overflow-y: scroll;
+<style lang="scss" scoped>
+#app {
+  .content {
+    filter: blur(0px);
   }
+}
+</style>
+
+<style lang="scss">
+body {
+  padding: 0;
+  margin: 0;
+  overflow-y: scroll;
+}
 </style>
