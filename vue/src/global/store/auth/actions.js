@@ -1,10 +1,10 @@
-import http from '@/global/plugins/http';
+import { Http } from '@/global/classes';
 import types from './types';
 
 export default {
   async login({ commit }, credentials) {
     return new Promise((resolve) => {
-      http.post(`${$ENV('TEEDEV_API')}/api/user/login`, credentials)
+      Http.post(`${$ENV('TEEDEV_API')}/api/user/login`, credentials)
         .then(({ data }) => {
           if (data.user && data.token) {
             commit(types.FETCH_USER_SUCCESS, data);
@@ -18,7 +18,7 @@ export default {
   },
 
   async register({ commit }, credentials) {
-    const { data } = await http.post(`${$ENV('TEEDEV_API')}/api/user/register`, credentials);
+    const { data } = await Http.post(`${$ENV('TEEDEV_API')}/api/user/register`, credentials);
 
     if (data.user && data.token) {
       commit(types.REGISTER_USER_SUCCESS, data);
@@ -29,14 +29,14 @@ export default {
 
   async logout({ commit }) {
     return new Promise((resolve) => {
-      http.get(`${$ENV('TEEDEV_API')}/api/user/logout`)
+      Http.get(`${$ENV('TEEDEV_API')}/api/user/logout`)
         .then(() => commit(types.USER_LOGOUT))
         .then(() => resolve(true));
     });
   },
 
   async getUserFromToken({ commit }) {
-    const { data } = await http.get(`${$ENV('TEEDEV_API')}/api/user/get`);
+    const { data } = await Http.get(`${$ENV('TEEDEV_API')}/api/user/get`);
 
     if (data) {
       commit(types.GET_LOGGED_IN_USER, data);
@@ -44,7 +44,7 @@ export default {
   },
 
   async getDetailedUser({ commit }) {
-    http.get(`${$ENV('TEEDEV_API')}/api/user/get-detailed`)
+    Http.get(`${$ENV('TEEDEV_API')}/api/user/get-detailed`)
       .then(({ data }) => {
         commit(types.FETCH_DETAILED_USER, data);
       });
@@ -52,7 +52,7 @@ export default {
 
   async uploadUserImage({ state }, image) {
     return new Promise((resolve) => {
-      http.post(`${$ENV('TEEDEV_API')}/api/user/upload-image`, {
+      Http.post(`${$ENV('TEEDEV_API')}/api/user/upload-image`, {
         user: state.user.id,
         image,
         field: 'uploaded',
@@ -65,7 +65,7 @@ export default {
 
   async uploadProfilePhoto({ state }, image) {
     return new Promise((resolve) => {
-      http.post(`${$ENV('TEEDEV_API')}/api/user/upload-image`, {
+      Http.post(`${$ENV('TEEDEV_API')}/api/user/upload-image`, {
         user: state.user.id,
         image,
         field: 'profile_photo',

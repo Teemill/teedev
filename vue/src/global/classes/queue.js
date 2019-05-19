@@ -1,8 +1,8 @@
-import { uid } from '@/global/plugins/helpers';
+import uuid from 'uuid/v1';
 
 export class QueueItem {
   constructor(item, queue) {
-    this.uid = uid();
+    this.uid = uuid();
     this.item = item;
     this.queue = queue;
   }
@@ -36,3 +36,5 @@ export class Queue {
     console.log(this, item);
   }
 }
+
+export default Queue;

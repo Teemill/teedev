@@ -1,11 +1,11 @@
-import http from '@/global/plugins/http';
+import { Http } from '@/global/classes';
 import types from './types';
 
 export default {
   async fetchAll({ commit, state }) {
     state.querying = true;
 
-    const { data } = await http.get(`${$ENV('TEEDEV_API')}/api/article/list`);
+    const { data } = await Http.get(`${$ENV('TEEDEV_API')}/api/article/list`);
 
     commit(types.FETCH_ARTICLES, data);
 
@@ -13,14 +13,14 @@ export default {
   },
 
   async findArticle({ commit }, route) {
-    const { data } = await http.get(`${$ENV('TEEDEV_API')}/api/article/find/${route.id}`);
+    const { data } = await Http.get(`${$ENV('TEEDEV_API')}/api/article/find/${route.id}`);
 
     commit(types.SET_ACTIVE_ARTICLE, data);
   },
 
   async findArticleBySlug({ commit }, route) {
     return new Promise((resolve) => {
-      http.get(`${$ENV('TEEDEV_API')}/api/article/find-by-slug/${route.slug}`)
+      Http.get(`${$ENV('TEEDEV_API')}/api/article/find-by-slug/${route.slug}`)
         .then(({ data }) => {
           if (data.error) {
             resolve(404);
@@ -34,7 +34,7 @@ export default {
 
   async saveNewArticle({ commit, dispatch }, newArticle) {
     return new Promise((resolve) => {
-      http.post(`${$ENV('TEEDEV_API')}/api/article/save-new-article`, {
+      Http.post(`${$ENV('TEEDEV_API')}/api/article/save-new-article`, {
         title: newArticle.title,
         content: newArticle.content,
         categories: JSON.stringify(newArticle.categories),
@@ -50,7 +50,7 @@ export default {
 
   async updateArticle({ commit, dispatch }, payload) {
     return new Promise((resolve) => {
-      http.post(`${$ENV('TEEDEV_API')}/api/article/update-article`, {
+      Http.post(`${$ENV('TEEDEV_API')}/api/article/update-article`, {
         articleId: payload.existingArticle.id,
         title: payload.updatedArticle.title,
         content: payload.updatedArticle.content,
@@ -67,7 +67,7 @@ export default {
 
   async getEditorMetaData({ commit }) {
     return new Promise((resolve) => {
-      http.get(`${$ENV('TEEDEV_API')}/api/article/get-editor-meta-data`)
+      Http.get(`${$ENV('TEEDEV_API')}/api/article/get-editor-meta-data`)
         .then(({ data }) => {
           commit(types.FETCH_META, data);
           resolve(data);
@@ -77,7 +77,7 @@ export default {
 
   async uploadFeatureImage({ state, commit }, base64) {
     return new Promise((resolve) => {
-      http.post(`${$ENV('TEEDEV_API')}/api/article/upload-feature-image`, {
+      Http.post(`${$ENV('TEEDEV_API')}/api/article/upload-feature-image`, {
         base64,
         articleId: state.article.id,
       })

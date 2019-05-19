@@ -1,7 +1,9 @@
 <template>
   <div class="shell-header full">
     <!-- <shell-logo /> -->
-    <h4 style="margin: 0 0 0 1em;">{{$store.state.route.meta.title}}</h4>
+    <transition name="text-fade-right" mode="out-in">
+      <h4 style="margin: 0 0 0 1em;" :key="$store.state.route.meta.title">{{$store.state.route.meta.title}}</h4>
+    </transition>
     <div style="display: flex; align-items: center;">
       <font-awesome-icon style="margin-right: 1em;" :icon="faBell" />
       <font-awesome-icon style="margin-right: 0.5em;" :icon="faCommentDots" />
@@ -13,7 +15,11 @@
 <script>
 import ShellLogo from './Logo';
 
-import { faBars, faBell, faCommentDots } from '@fortawesome/pro-light-svg-icons';
+import {
+  faBars,
+  faBell,
+  faCommentDots,
+} from '@fortawesome/pro-light-svg-icons';
 
 export default {
   name: 'teedev-header',

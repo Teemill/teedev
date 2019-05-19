@@ -1,4 +1,4 @@
-import Angle from '@/global/plugins/physics/angle';
+import { Angle } from '@/global/classes';
 
 function round(value, decimals) {
   const multiple = 10 ** decimals;

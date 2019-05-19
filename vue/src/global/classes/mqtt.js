@@ -1,12 +1,14 @@
-import Mqtt from 'mqtt';
+import MqttPackage from 'mqtt';
 
-const mqtt = {
-  connection: null,
-  subscriptions: {},
+export default class Mqtt {
+  constructor() {
+    this.connection = null;
+    this.subscriptions = {};
+  }
 
   async connect(host, port) {
     if ($ENV('TEEDEV_MQTT_HOST')) {
-      this.connection = Mqtt.connect(`${host || $ENV('TEEDEV_MQTT_HOST')}:${port || $ENV('TEEDEV_MQTT_PORT')}`);
+      this.connection = MqttPackage.connect(`${host || $ENV('TEEDEV_MQTT_HOST')}:${port || $ENV('TEEDEV_MQTT_PORT')}`);
 
       return new Promise((resolve) => {
         this.connection.on('connect', () => {
@@ -35,7 +37,7 @@ const mqtt = {
     }
 
     return null;
-  },
+  }
 
   // async reconnect() {
   // },
@@ -55,14 +57,14 @@ const mqtt = {
         }
       });
     });
-  },
+  }
 
   // async unsubscribe(topic) {
   // },
 
   async publish(topic, message) {
     this.connection.publish(topic, message ? JSON.stringify(message) : null);
-  },
+  }
 
   subscribeToSubscriptions() {
     const topics = Object.keys(this.subscriptions);
@@ -73,19 +75,17 @@ const mqtt = {
 
       this.subscribe(topic, callback);
     }
-  },
-};
-
-export default mqtt;
+  }
+}
 
 export const installer = (Vue) => {
-  Vue.prototype.$mqtt = mqtt;
+  Vue.prototype.$mqtt = Mqtt;
 
-  mqtt.connect();
+  Mqtt.connect();
 };
 
 export const uninstaller = (Vue) => {
   delete Vue.prototype.$mqtt;
 
-  mqtt.disconnect();
+  Mqtt.disconnect();
 };

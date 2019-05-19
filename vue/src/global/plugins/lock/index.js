@@ -1,11 +1,11 @@
-import http from '../http';
+import { Http } from '@/global/classes';
 
 const lock = {
   locks: {},
 
   request(name) {
     return new Promise((resolve) => {
-      http.post(
+      Http.post(
         `${$ENV('TEEDEV_API')}/api/lock/request`,
         { name },
       ).then((response) => {
@@ -21,7 +21,7 @@ const lock = {
 
   release(name) {
     return new Promise((resolve) => {
-      http.post(
+      Http.post(
         `${$ENV('TEEDEV_API')}/api/lock/release`,
         { name },
       ).then((response) => {

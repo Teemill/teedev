@@ -1,4 +1,4 @@
-import FrameQueue from '@/global/plugins/helpers/frameQueue';
+import { FrameQueue } from '@/global/classes';
 
 const frameQueue = new FrameQueue();
 

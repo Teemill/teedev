@@ -125,7 +125,7 @@
 
 <script>
 import { VueEditor } from 'vue2-editor';
-import http from '@/global/plugins/http';
+import { Http } from '@/global/classes';
 
 import Article from '../classes/Article';
 import helpers from '../mixins/_helpers';
@@ -204,7 +204,7 @@ export default {
                   },
                 }));
             } else {
-              http.get(`${$ENV('TEEDEV_API')}/api/article/find-by-title/${this.title}`)
+              Http.get(`${$ENV('TEEDEV_API')}/api/article/find-by-title/${this.title}`)
                 .then(({ data }) => {
                   if (data.title) {
                     this.$store.commit('articles/SET_CREATION_ERROR', articleObject.error);

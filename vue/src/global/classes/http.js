@@ -1,7 +1,7 @@
 import Cookies from 'js-cookie';
 import axios from 'axios';
 
-const http = {
+export default class Http {
   post(url, data = {}) {
     const params = new URLSearchParams();
     const dataKeys = Object.keys(data);
@@ -23,7 +23,7 @@ const http = {
       headers,
       withCredentials: true,
     });
-  },
+  }
 
   get(url, params = {}) {
     const token = this.getAuthToken();
@@ -43,15 +43,13 @@ const http = {
       headers,
       withCredentials: true,
     });
-  },
+  }
 
   getAuthToken() {
     return Cookies.get('token') || '';
-  },
-};
-
-export default http;
+  }
+}
 
 export const installer = (Vue) => {
-  Vue.prototype.$http = http;
+  Vue.prototype.$http = Http;
 };
