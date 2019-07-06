@@ -5,27 +5,40 @@
         <h1 class="title">{{welcomeMessage.title}}</h1>
         <p class="sub-text">{{welcomeMessage.message}}</p>
         <div class="actions">
-          <div class="action">
+          <div
+            class="action"
+            @click="$router.push('/blog/')"
+          >
             <font-awesome-icon :icon="faMugHot" />
             <p>Blog</p>
           </div>
-          <div class="action">
+          <div
+            class="action"
+            @click="$router.push('/eval/')"
+          >
             <font-awesome-icon :icon="faTerminal" />
             <p>Eval</p>
           </div>
-          <div class="action">
+          <div
+            class="action"
+            @click="$router.push('/space/')"
+          >
             <font-awesome-icon :icon="faLightbulb" />
             <p>Space</p>
           </div>
           <div
             class="action"
+            @click="$router.push('/memes/')"
             @mouseenter="onMouseEnterMeme"
             @mouseleave="onMouseLeaveMeme"
           >
             <font-awesome-icon :icon="faGhost" />
             <p>Memes</p>
           </div>
-          <div class="action">
+          <div
+            class="action"
+            @click="$router.push('/settings/')"
+          >
             <font-awesome-icon :icon="faSlidersH" />
             <p>Settings</p>
           </div>

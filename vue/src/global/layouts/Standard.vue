@@ -4,7 +4,7 @@
     <div class="content">
       <slot/>
     </div>
-    <shell-action-bar />
+    <shell-action-bar v-if="$device.max('sm')" />
   </div>
 </template>
 

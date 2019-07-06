@@ -5,8 +5,16 @@
       <h4 style="margin: 0 0 0 1em;" :key="$store.state.route.meta.title">{{$store.state.route.meta.title}}</h4>
     </transition>
     <div style="display: flex; align-items: center;">
-      <font-awesome-icon style="margin-right: 1em;" :icon="faBell" />
-      <font-awesome-icon style="margin-right: 0.5em;" :icon="faCommentDots" />
+      <teedev-button
+        :icon="faBell"
+        just-icon
+      />
+      <teedev-button
+        :icon="faCommentDots"
+        just-icon
+      />
+      <!-- <font-awesome-icon style="margin-right: 1em;" :icon="faBell" />
+      <font-awesome-icon style="margin-right: 0.5em;" :icon="faCommentDots" /> -->
       <teedev-user-profile-icon />
     </div>
   </div>

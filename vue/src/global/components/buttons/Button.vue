@@ -22,15 +22,16 @@
       'primary': primary,
       'fill': fill,
       'loading': loading,
-      'only-icon': !text && icon
+      'only-icon': !text && icon,
+      'just-icon': justIcon,
     }"
     @click="$emit('click')"
   >
     <teedev-spinner v-if="loading" class="spinner"/>
-    <span class="content">
+    <div class="content">
       <font-awesome-icon v-if="icon" class="mr-2" :icon="icon" />
       {{text}}
-    </span>
+    </div>
   </div>
 </template>
 
@@ -45,6 +46,7 @@ export default {
     loading: Boolean,
     fill: Boolean,
     icon: Object,
+    justIcon: Boolean,
   },
 
   theme: $theme => (`
@@ -72,7 +74,7 @@ export default {
   align-items: center;
 
   position: relative;
-  padding: 1em 2em;
+  padding: 1rem 2rem;
   background-color: $color-highlight;
   border-radius: $border-radius;
   cursor: pointer;
@@ -102,10 +104,11 @@ export default {
   }
 
   .content {
+    transform: translateY(1px);
+
     svg {
-      margin-bottom: -1px;
-      width: 1em;
-      height: 1em;
+      font-size: 1.25rem;
+      margin: -0.125rem;
     }
   }
 
@@ -114,58 +117,25 @@ export default {
   }
 
   &.only-icon {
-    padding: 1em;
+    padding: 1rem;
 
     .content svg {
       margin-right: 0 !important;
     }
   }
+
+  &.just-icon {
+    background: none;
+
+    .content svg {
+      transition: color $anim-time-s;
+    }
+
+    &:hover {
+      .content svg {
+        color: $color-primary;
+      }
+    }
+  }
 }
-// .teedev-button {
-//   display: inline-flex;
-//   position: relative;
-//   padding: calc(0.75rem - 1px) 2em;
-//   cursor: pointer;
-
-//   background-color: $color-highlight;
-//   border: 1px solid transparent;
-//   border-radius: $border-radius;
-//   overflow: hidden;
-//   user-select: none;
-
-//   transition: background-color $anim-time-m, box-shadow $anim-time-m;
-
-//   &:hover {
-//     background-color: rgba(0,0,0,0.1);
-//   }
-
-//   &.primary {
-//     color: $color-background;
-//     background-color: $color-primary;
-//     border-color: $color-primary;
-
-//     &:hover {
-//       background-color: rgba($color-primary, 0.75);
-//     }
-//   }
-
-//   &.fill {
-//     width: 100%;
-//     text-align: center;
-//   }
-
-//   &.loading {
-//     .content {
-//       opacity: 0;
-//     }
-
-//     .spinner {
-//       position: absolute;
-//       top: 0;
-//       left: 0;
-//       bottom: 0;
-//       right: 0;
-//     }
-//   }
-// }
 </style>

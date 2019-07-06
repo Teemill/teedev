@@ -58,7 +58,3 @@ export default class Device {
     return this.min(minDevice) && this.max(maxDevice);
   }
 }
-
-export const installer = (Vue) => {
-  Vue.prototype.$device = new Device();
-};

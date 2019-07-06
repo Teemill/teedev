@@ -1,6 +1,6 @@
 export default {
   path: '/',
-  name: 'TeeDev Home',
+  name: 'home',
   component: () => import(/* webpackChunkName: "PageHome" */ './Home'),
   meta: {
     title: 'Home',
