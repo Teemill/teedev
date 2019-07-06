@@ -10,7 +10,7 @@
 <script>
 export default {
   name: 'layout',
-  
+
   computed: {
     layout() {
       const pageLayout = this.$store.state.route.meta.layout;
@@ -22,5 +22,5 @@ export default {
       return 'none-layout';
     },
   },
-}
+};
 </script>

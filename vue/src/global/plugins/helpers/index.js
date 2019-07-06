@@ -1,5 +1,5 @@
 // import userPlaceholder from '@/pages/articles/assets/images/placeholder-user.jpeg';
-import { Device } from '@/global/classes'; 
+import { Device } from '@/global/classes';
 
 const helpers = {
   getUserImage(user) {

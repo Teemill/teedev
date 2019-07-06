@@ -113,7 +113,7 @@ export default {
     onMouseEnterMeme() {
       this.welcomeMessages.forEach((message) => {
         if (message.title === ':)') {
-          message.title = '>:('
+          message.title = '>:(';
         }
       });
     },
@@ -121,7 +121,7 @@ export default {
     onMouseLeaveMeme() {
       this.welcomeMessages.forEach((message) => {
         if (message.title === '>:(') {
-          message.title = ';)'
+          message.title = ';)';
         }
       });
     },
@@ -186,7 +186,7 @@ export default {
       justify-content: center;
       margin-top: 6rem;
       flex-wrap: wrap;
-      
+
       .action {
         padding: 2em;
         margin: 0 1em;
@@ -231,4 +231,3 @@ export default {
   }
 }
 </style>
-

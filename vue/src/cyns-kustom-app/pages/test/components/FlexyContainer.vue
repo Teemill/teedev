@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import resize from 'vue-resize-directive'
+import resize from 'vue-resize-directive';
 
 export default {
   name: 'teedev-flexy-container',
@@ -59,7 +59,7 @@ export default {
   mounted() {
     this.onResize();
   },
-}
+};
 </script>
 
 <style lang="scss" scoped>
@@ -80,4 +80,3 @@ export default {
   // }
 }
 </style>
-

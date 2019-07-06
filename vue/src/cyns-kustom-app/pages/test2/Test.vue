@@ -49,10 +49,10 @@ export default {
         this.testOffset = 50;
       }
 
-      window.requestAnimationFrame(this.relativity.update)
+      window.requestAnimationFrame(this.relativity.update);
     }, 2000);
   },
-}
+};
 </script>
 
 <style lang="scss" scoped>
@@ -81,4 +81,3 @@ export default {
   }
 }
 </style>
-

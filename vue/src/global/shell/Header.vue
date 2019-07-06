@@ -2,7 +2,12 @@
   <div class="shell-header full">
     <!-- <shell-logo /> -->
     <transition name="text-fade-right" mode="out-in">
-      <h4 style="margin: 0 0 0 1em;" :key="$store.state.route.meta.title">{{$store.state.route.meta.title}}</h4>
+      <h4
+        style="margin: 0 0 0 1em;"
+        :key="$store.state.route.meta.title"
+      >
+        {{$store.state.route.meta.title}}
+      </h4>
     </transition>
     <div style="display: flex; align-items: center;">
       <teedev-button
@@ -21,20 +26,20 @@
 </template>
 
 <script>
-import ShellLogo from './Logo';
-
 import {
   faBars,
   faBell,
   faCommentDots,
 } from '@fortawesome/pro-light-svg-icons';
+// import ShellLogo from './Logo';
+
 
 export default {
   name: 'teedev-header',
 
-  components: {
-    ShellLogo,
-  },
+  // components: {
+  //   ShellLogo,
+  // },
 
   data: () => ({
     faBars,
@@ -48,7 +53,7 @@ export default {
 .shell-header {
   display: flex;
   align-items: center;
-  justify-content: space-between; 
+  justify-content: space-between;
 
   font-size: 1.25em;
 
