@@ -27,6 +27,10 @@ module.exports = {
     'vue/no-use-v-if-with-v-for': 'off',
     'class-methods-use-this': 'off',
     'no-bitwise': 'off',
+    'operator-linebreak': 'off',
+    'key-spacing': 'off',
+    'no-plusplus': 'off',
+    'no-multi-spaces': 'off',
   },
   parserOptions: {
     parser: 'babel-eslint',
