@@ -10,26 +10,27 @@
     "test:unit": "vue-cli-service test:unit"
   },
   "dependencies": {
-    "core-js": "^2.6.5",
+    "@teedev/core": "^1.0.0",
+    "core-js": "^3.1.4",
     "register-service-worker": "^1.6.2",
     "vue": "^2.6.10",
-    "vue-router": "^3.0.3",
-    "vuex": "^3.0.1"
+    "vue-router": "^3.0.7",
+    "vuex": "^3.1.1"
   },
   "devDependencies": {
-    "@types/chai": "^4.1.0",
-    "@types/mocha": "^5.2.4",
-    "@vue/cli-plugin-babel": "^3.9.0",
-    "@vue/cli-plugin-e2e-nightwatch": "^3.9.0",
+    "@types/chai": "^4.1.7",
+    "@types/mocha": "^5.2.7",
+    "@vue/cli-plugin-babel": "^3.9.2",
+    "@vue/cli-plugin-e2e-nightwatch": "^3.9.2",
     "@vue/cli-plugin-pwa": "^3.9.0",
     "@vue/cli-plugin-typescript": "^3.9.0",
     "@vue/cli-plugin-unit-mocha": "^3.9.0",
-    "@vue/cli-service": "^3.9.0",
+    "@vue/cli-service": "^3.9.3",
     "@vue/test-utils": "1.0.0-beta.29",
-    "chai": "^4.1.2",
-    "node-sass": "^4.9.0",
+    "chai": "^4.2.0",
+    "node-sass": "^4.12.0",
     "sass-loader": "^7.1.0",
-    "typescript": "^3.4.3",
+    "typescript": "^3.5.3",
     "vue-template-compiler": "^2.6.10"
   }
 }
