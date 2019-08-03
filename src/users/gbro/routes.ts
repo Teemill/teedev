@@ -2,6 +2,6 @@ export default [
   {
     path: 'swag',
     name: 'demo',
-    component: () => import(/* webpackChunkName: "about" */ './pages/Demo.vue'),
+    component: () => import(/* webpackChunkName: "about" */ './views/Demo.vue'),
   },
 ];
