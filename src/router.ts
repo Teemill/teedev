@@ -40,6 +40,8 @@ export default new Router({
   routes: [
     ...routes,
     {
+      path: '*',
+      component: () => import(/* webpackChunkName: "view404" */ '@/views/core/404/404.vue'),
     },
   ],
 });
