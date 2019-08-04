@@ -1,0 +1,12 @@
+@mixin page-transition {
+  .page-enter-active,
+  .page-leave-active {
+    transition: opacity 0.1s, transform 0.1s;
+  
+    &.page-enter,
+    &.page-leave-to {
+      opacity: 0;
+      transform: translate(1rem);
+    }
+  }
+}

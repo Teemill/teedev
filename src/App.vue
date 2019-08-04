@@ -1,12 +1,22 @@
 <template>
   <div id="app">
+    <div id="nav">
+      <router-link to="/">Home</router-link> |
+      <router-link to="/about">About</router-link> |
+      <router-link to="/devan">Devan Home</router-link> |
+      <router-link to="/devan/about">Devan About</router-link> |
+      <router-link to="/gbro">Gbro Home</router-link> |
+      <router-link to="/gbro/about">Gbro About</router-link>
+    </div>
     <transition name="page" mode="out-in">
-      <router-view/>
+      <router-view />
     </transition>
   </div>
 </template>
 
 <style lang="scss" scoped>
+@include page-transition;
+
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -24,17 +34,6 @@
     &.router-link-exact-active {
       color: #42b983;
     }
-  }
-}
-
-.page-enter-active,
-.page-leave-active {
-  transition: opacity 0.1s, transform 0.1s;
-
-  &.page-enter,
-  &.page-leave-to {
-    opacity: 0;
-    transform: translate(1rem);
   }
 }
 </style>
