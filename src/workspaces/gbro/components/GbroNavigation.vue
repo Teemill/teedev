@@ -6,6 +6,9 @@
     <gbro-nav-item to="/gbro/formula-e/">
       Formula E
     </gbro-nav-item>
+    <gbro-nav-item to="/gbro/dashboard/">
+      Dashboard
+    </gbro-nav-item>
   </div>
 </template>
 
