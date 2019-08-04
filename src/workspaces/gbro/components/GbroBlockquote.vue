@@ -11,7 +11,7 @@
 
 <script>
 export default {
-  name: 'g-block-quote',
+  name: 'gbro-blockquote',
 
   props: {
     quote: {

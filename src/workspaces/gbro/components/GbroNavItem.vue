@@ -1,6 +1,6 @@
 <template>
   <div class="gbro-nav-item">
-    <router-link :to="to">
+    <router-link :to="to" class="p-4 py-2 inline-block w-full">
       <slot />
     </router-link>
   </div>
@@ -19,6 +19,10 @@ export default {
 };
 </script>
 
-<style>
-
+<style lang="scss" scoped>
+.gbro-nav-item {
+  a:hover {
+    background: #e9e9e9;
+  }
+}
 </style>
