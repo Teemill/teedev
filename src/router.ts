@@ -6,32 +6,36 @@ import { RouteConfig } from 'vue-router';
 Vue.use(Router);
 
 const routes: RouteConfig[] = [];
-const workspaceRoutes = require.context('./views', true, /\.(?:\/[\w-_]+){2}\/index\.(?:ts|js)$/);
+
+const workspaceRoutes = require.context('./workspaces', true, /^\.\/([\w]+)\/views\/([\w]+)\/index\.(ts|js)$/);
+const coreRoutes      = require.context('./views',      true, /^\.\/([\w]+)\/index\.(ts|js)$/);
 
 workspaceRoutes.keys().forEach((dir) => {
   const route: RouteConfig = workspaceRoutes(dir).default;
+
   const workspaceName = dir.match(/\.\/([\w-_]+)/)![1];
+  const parentRoute   = routes.find(r => r.name === workspaceName);
 
-  if (workspaceName === 'core') {
-    routes.push(route);
-  } else {
-    const parentRoute = routes.find(r => r.name === workspaceName);
-
-    if (parentRoute) {
-      if (!parentRoute.children) {
-        parentRoute.children = [];
-      }
-
-      parentRoute.children.push(route);
-    } else {
-      routes.push({
-        name: workspaceName,
-        path: `/${workspaceName}`,
-        component: () => import(/* webpackChunkName: "shell" */ '@/components/shell/Workspace.vue'),
-        children: [route], 
-      } as RouteConfig);
+  if (parentRoute) {
+    if (!parentRoute.children) {
+      parentRoute.children = [];
     }
+
+    parentRoute.children.push(route);
+  } else {
+    routes.push({
+      name: workspaceName,
+      path: `/${workspaceName}`,
+      component: () => import(/* webpackChunkName: "shell" */ '@/components/shell/Workspace.vue'),
+      children: [route], 
+    } as RouteConfig);
   }
+});
+
+coreRoutes.keys().forEach((dir) => {
+  const route: RouteConfig = coreRoutes(dir).default;
+
+  routes.push(route);
 });
 
 export default new Router({
@@ -41,7 +45,7 @@ export default new Router({
     ...routes,
     {
       path: '*',
-      component: () => import(/* webpackChunkName: "view404" */ '@/views/core/404/404.vue'),
+      component: () => import(/* webpackChunkName: "view404" */ '@/views/404/404.vue'),
     },
   ],
 });
