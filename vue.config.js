@@ -21,7 +21,8 @@ module.exports = {
   chainWebpack: config => {
     config.resolve.alias
       .set('@', resolve('src'))
-      .set('@gbro', resolve('src/users/gbro'))
-      .set('@devan', resolve('src/users/devan'))
+      .set('@core', resolve('src/workspaces/core'))
+      .set('@gbro', resolve('src/workspaces/gbro'))
+      .set('@devan', resolve('src/workspaces/devan'))
   },
 };
