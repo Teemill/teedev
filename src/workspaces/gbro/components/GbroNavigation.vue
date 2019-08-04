@@ -20,3 +20,10 @@ export default {
   },
 };
 </script>
+
+<style lang="scss" scoped>
+.gbro-navigation {
+  position: relative;
+  z-index: 3000;
+}
+</style>
