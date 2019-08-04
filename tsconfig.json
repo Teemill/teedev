@@ -20,7 +20,7 @@
         "src/*"
       ],
       "@gbro/*": [
-        "src/users/gbro/*"
+        "src/workspaces/gbro/*"
       ],
     },
     "lib": [

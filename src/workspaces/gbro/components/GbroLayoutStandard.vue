@@ -12,9 +12,9 @@
 </template>
 
 <script>
-import GbroHeader from '@/users/gbro/components/GbroHeader.vue';
-import GbroFooter from '@/users/gbro/components/GbroFooter.vue';
-import GbroNavigation from '@/users/gbro/components/GbroNavigation.vue';
+import GbroHeader from '@/workspaces/gbro/components/GbroHeader.vue';
+import GbroFooter from '@/workspaces/gbro/components/GbroFooter.vue';
+import GbroNavigation from '@/workspaces/gbro/components/GbroNavigation.vue';
 
 export default {
   name: 'gbro-home',

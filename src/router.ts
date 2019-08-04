@@ -6,11 +6,13 @@ import { RouteConfig } from 'vue-router';
 Vue.use(Router);
 
 const routes: RouteConfig[] = [];
-const workspaceRoutes = require.context('./views', true, /\.(?:\/[\w-_]+){2}\/index\.(?:ts|js)$/);
+const workspaceRoutes = require.context('./workspaces', true, /\.(?:\/[\w-_]+){3}\/index\.(?:ts|js)$/);
 
 workspaceRoutes.keys().forEach((dir) => {
+  console.log(dir);
   const route: RouteConfig = workspaceRoutes(dir).default;
   const workspaceName = dir.match(/\.\/([\w-_]+)/)![1];
+  console.log(workspaceName);
 
   if (workspaceName === 'core') {
     routes.push(route);
@@ -33,6 +35,7 @@ workspaceRoutes.keys().forEach((dir) => {
     }
   }
 });
+console.log(routes);
 
 export default new Router({
   mode: 'history',
@@ -41,7 +44,7 @@ export default new Router({
     ...routes,
     {
       path: '*',
-      component: () => import(/* webpackChunkName: "view404" */ '@/views/core/404/404.vue'),
+      component: () => import(/* webpackChunkName: "view404" */ '@/workspaces/core/views/404/404.vue'),
     },
   ],
 });
