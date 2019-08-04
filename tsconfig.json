@@ -18,7 +18,10 @@
     "paths": {
       "@/*": [
         "src/*"
-      ]
+      ],
+      "@gbro/*": [
+        "src/users/gbro/*"
+      ],
     },
     "lib": [
       "esnext",

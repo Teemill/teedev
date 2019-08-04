@@ -1,6 +1,5 @@
 <template>
-  <div>
-    <h1>Welcome to Gbro town</h1>
+  <div id="gbro-app">
     <router-view />
   </div>
 </template>
@@ -11,6 +10,6 @@ export default {
 };
 </script>
 
-<style>
-
+<style lang="scss">
+@import "./css/core.scss";
 </style>
