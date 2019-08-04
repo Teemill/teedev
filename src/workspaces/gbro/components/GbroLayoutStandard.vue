@@ -27,6 +27,6 @@ export default {
 };
 </script>
 
-<style>
-
+<style lang="scss" scoped>
+@import './../css/core.scss';
 </style>
