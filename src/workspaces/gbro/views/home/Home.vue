@@ -40,9 +40,15 @@
         </div>
       </gbro-box>
 
-      <gbro-box background="#BBDEFB">
-        <div class="container mx-auto">
-          <h3>Something will go here</h3>
+      <gbro-box>
+        <div class="container mx-auto flex">
+          <div class="flex-shrink w-1/4">
+            <img :src="require('@gbro/assets/archery.jpg')" />
+          </div>
+          <div class="flex-1 pl-6">
+            <h2>Archery boy</h2>
+            <p class="mb-3">Legolas ain't got shit on me</p>
+          </div>
         </div>
       </gbro-box>
 
