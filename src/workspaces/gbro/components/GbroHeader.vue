@@ -1,11 +1,11 @@
 <template>
   <div class="header shadow">
-    <div class="home-link p-3">
+    <div class="home-link p-4">
       <router-link
         to="/gbro/"
       >
         <img
-          class="h-12"
+          class="h-8"
           :src="require('./../assets/gbro_logo.svg')"
         />
       </router-link>
