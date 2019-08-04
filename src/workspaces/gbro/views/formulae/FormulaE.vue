@@ -1,6 +1,5 @@
 <template>
-  <div>
-    <formula-e-header />
+  <gbro-layout-standard>
     <g-one-page-banner
       :src="require('./assets/action_club_stylised.png')"
       color="#fff"
@@ -46,11 +45,12 @@
         quote="We're not in Formula E just to fill the roster. Our aim is to win both the driver's and constructor's championships within 3 years"
       />
     </g-one-page-banner>
-  </div>
+  </gbro-layout-standard>
 </template>
 
 <script>
-import FormulaEHeader from './components/FormulaEHeader.vue';
+import GbroLayoutStandard from '@/workspaces/gbro/components/GbroLayoutStandard.vue';
+
 import FeSwishLine from './components/FeSwishLine.vue';
 import GOnePageBanner from './components/GOnePageBanner.vue';
 import GBlockquote from './components/GBlockquote.vue';
@@ -59,7 +59,7 @@ export default {
   name: 'formula-e-page',
 
   components: {
-    FormulaEHeader,
+    GbroLayoutStandard,
     FeSwishLine,
     GOnePageBanner,
     GBlockquote,

@@ -1,6 +1,6 @@
 <template>
   <gbro-layout-standard>
-    <div class="container mx-auto">
+    <div class="container mx-auto pt-6">
       <h1>Welcome to my workspace</h1>
       <p class="mb-3">Here is a tortoise.</p>
     </div>

@@ -65,7 +65,7 @@ export default {
 
 <style lang="scss">
 .banner {
-  height: 70vh;
+  height: 90vh;
 
   position: relative;
   overflow: visible;

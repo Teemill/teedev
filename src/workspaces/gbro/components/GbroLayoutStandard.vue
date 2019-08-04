@@ -1,9 +1,9 @@
 <template>
-  <div>
+  <div id="gbro-app">
     <gbro-header />
     <div class="flex">
       <gbro-navigation />
-      <div class="flex-1 mx-auto py-6 min-h-screen">
+      <div class="flex-1 mx-auto min-h-screen">
         <slot />
       </div>
     </div>
@@ -27,6 +27,6 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 @import './../css/core.scss';
 </style>
