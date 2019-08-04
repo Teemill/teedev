@@ -20,5 +20,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.header {
+  position: relative;
+  z-index: 3000;
+}
 </style>
 
