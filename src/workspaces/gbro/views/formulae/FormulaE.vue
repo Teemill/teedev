@@ -53,7 +53,7 @@ import GbroLayoutStandard from '@/workspaces/gbro/components/GbroLayoutStandard.
 
 import FeSwishLine from './components/FeSwishLine.vue';
 import GOnePageBanner from './components/GOnePageBanner.vue';
-import GBlockquote from './components/GBlockquote.vue';
+import GbroBlockquote from '@gbro/components/GbroBlockquote.vue';
 
 export default {
   name: 'formula-e-page',
@@ -62,7 +62,7 @@ export default {
     GbroLayoutStandard,
     FeSwishLine,
     GOnePageBanner,
-    GBlockquote,
+    GbroBlockquote,
   },
 };
 </script>

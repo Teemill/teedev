@@ -11,7 +11,6 @@ const workspaceRoutes = require.context('./workspaces', true, /^\.\/([\w]+)\/vie
 const coreRoutes      = require.context('./views',      true, /^\.\/([\w]+)\/index\.(ts|js)$/);
 
 workspaceRoutes.keys().forEach((dir) => {
-  console.log(dir);
   const route: RouteConfig = workspaceRoutes(dir).default;
 
   const workspaceName = dir.match(/\.\/([\w-_]+)/)![1];
@@ -32,7 +31,6 @@ workspaceRoutes.keys().forEach((dir) => {
     } as RouteConfig);
   }
 });
-console.log(routes);
 
 coreRoutes.keys().forEach((dir) => {
   const route: RouteConfig = coreRoutes(dir).default;

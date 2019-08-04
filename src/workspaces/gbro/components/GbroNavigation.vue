@@ -1,10 +1,10 @@
 <template>
   <div class="gbro-navigation flex-shrink w-64 shadow">
-    <gbro-nav-item to="/gbro/about/">
+    <gbro-nav-item to="/gbro/">
       About
     </gbro-nav-item>
     <gbro-nav-item to="/gbro/formula-e/">
-      Dank
+      Formula E
     </gbro-nav-item>
   </div>
 </template>
@@ -20,7 +20,3 @@ export default {
   },
 };
 </script>
-
-<style>
-
-</style>
