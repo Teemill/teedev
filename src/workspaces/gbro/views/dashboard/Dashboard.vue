@@ -32,20 +32,85 @@
 
     <gbro-box background="#323232">
       <div class="container mx-auto">
-        <vue-frappe
-            id="test"
-            class="chart-dark"
-            :labels="[
-                '12am-3am', '3am-6am', '6am-9am', '9am-12pm',
-                '12pm-3pm', '3pm-6pm', '6pm-9pm', '9pm-12am'
-            ]"
-            title="Sales"
-            type="axis-mixed"
-            :height="300"
-            :colors="['#5fcd4a', '#3ba0ff', '#ff993b', '#ff3f3b']"
-            :dataSets="chartData"
-          >
-        </vue-frappe>
+        <t-chart
+          id="dark"
+          :labels="[
+              '12am-3am', '3am-6am', '6am-9am', '9am-12pm',
+              '12pm-3pm', '3pm-6pm', '6pm-9pm', '9pm-12am'
+          ]"
+          title="Sales"
+          :datasets="chartData"
+          dark-mode
+        />
+        <div>
+          <div class="inline-block w-1/3">
+            <t-chart
+              id="dark-pie"
+              :labels="[
+                  'A', 'B', 'C', 'D', 'E', 'F',
+              ]"
+              title="Swagness"
+              :datasets="pieData"
+              type="pie"
+              dark-mode
+            />
+          </div>
+          <div class="inline-block w-2/3">
+            <t-chart
+              id="dark-line"
+              :labels="[
+                  'A', 'B', 'C', 'D', 'E', 'F',
+              ]"
+              title="Swagness"
+              :datasets="pieData"
+              type="bar"
+              dark-mode
+            />
+          </div>
+        </div>
+      </div>
+    </gbro-box>
+
+    <gbro-box background="#fff">
+      <div class="container mx-auto">
+        <t-chart
+          id="light"
+          :labels="[
+              '12am-3am', '3am-6am', '6am-9am', '9am-12pm',
+              '12pm-3pm', '3pm-6pm', '6pm-9pm', '9pm-12am'
+          ]"
+          title="Swag over time"
+          :datasets="chartData"
+          :colors="[
+            '#673AB7',
+            '#009688',
+            '#E91E63',
+          ]"
+        />
+        <div>
+          <div class="inline-block w-1/3">
+            <t-chart
+              id="light-pie"
+              :labels="[
+                  'A', 'B', 'C', 'D', 'E', 'F',
+              ]"
+              title="Swagness"
+              :datasets="pieData"
+              type="pie"
+            />
+          </div>
+          <div class="inline-block w-2/3">
+            <t-chart
+              id="light-line"
+              :labels="[
+                  'A', 'B', 'C', 'D', 'E', 'F',
+              ]"
+              title="Swagness"
+              :datasets="pieData"
+              type="bar"
+            />
+          </div>
+        </div>
       </div>
     </gbro-box>
 
@@ -53,82 +118,49 @@
 </template>
 
 <script>
+import TChart from '@/components/charts/TChart.vue';
+
 import GbroLayoutStandard from '@gbro/components/GbroLayoutStandard.vue';
 import GbroBox from '@gbro/components/GbroBox.vue';
 
 import { Card } from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 
-import Chart from 'vue2-frappe';
 import Vue from 'vue';
-
-Vue.use(Chart);
 
 Vue.component(Card.name, Card);
 
-export default {
+export default Vue.extend({
   name: 'gbro-dashboard',
 
   components: {
     GbroLayoutStandard,
     GbroBox,
+    TChart,
   },
 
   data: () => ({
     chartData: [
-        {
-            name: "Some Data", chartType: "line",
-            values: [25, 40, 30, 35, 8, 52, 17, 4]
-        },
-        {
-            name: "Another Set", chartType: "line",
-            values: [25, 50, 10, 15, 18, 32, 27, 14]
-        },
-        {
-            name: "Final Set", chartType: "line",
-            values: [14, 33, 10, 8, 23, 31, 27, 2]
-        },
+      {
+          name: "Some Data", chartType: "line",
+          values: [25, 40, 30, 35, 8, 52, 17, 4]
+      },
+      {
+          name: "Another Set", chartType: "line",
+          values: [25, 50, 10, 15, 18, 32, 27, 14]
+      },
+      {
+          name: "Final Set", chartType: "line",
+          values: [14, 33, 10, 8, 23, 31, 27, 2]
+      },
+    ],
+    pieData: [
+      {
+        name: 'swag',
+        chartType: 'bar',
+        values: [14, 6, 8, 2, 5, 7],
+      },
     ],
   }),
-};
+});
 </script>
-
-<style lang="scss">
-.chart-dark {
-  .frappe-chart {
-    .title {
-      fill: #fff;
-    }
-
-    .y.axis {
-      text {
-        fill: #fff;
-      }
-    }
-
-    .x.axis {
-      text {
-        fill: #fff;
-      }
-    }
-
-    .chart-legend {
-      .legend-dataset-text {
-        fill: #fff;
-      }
-    }
-
-    .dataset-line {
-      circle {
-        stroke: #323232;
-      }
-    }
-
-    .line-chart {
-      line {
-        stroke: #555!important;
-      }
-    }
-  }
-}
-</style>
