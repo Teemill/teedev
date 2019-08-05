@@ -18,7 +18,7 @@
 
 <script>
 /**
- * Component: t-chart
+ * @component t-chart
  * An adaptable chart component based on frappe-charts, using the Vue2-frappe
  * package
  *
