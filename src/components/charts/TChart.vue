@@ -113,13 +113,13 @@ export default Vue.extend({
 
     /**
      * Makes the chart easier to read on a dark background
-     * (designed with #323232 in mind)
+     * (designed with colors.gray.800 in mind)
      */
     darkMode: {
       type: Boolean,
     },
   },
-};
+})
 </script>
 
 <style lang="scss">
@@ -131,39 +131,39 @@ export default Vue.extend({
   .chart-dark {
     .frappe-chart {
       .title {
-        fill: #fff;
+        fill: theme('colors.white');
       }
 
       .y.axis {
         text {
-          fill: #fff;
+          fill: theme('colors.white');
         }
       }
 
       .x.axis {
         text {
-          fill: #fff;
+          fill: theme('colors.white');
         }
       }
 
       .chart-legend {
         .legend-dataset-text {
-          fill: #fff;
+          fill: theme('colors.white');
         }
       }
 
       .dataset-line {
         circle {
-          stroke: #323232;
+          stroke: theme('colors.material.gray.800');
         }
       }
 
       .line-chart {
         line {
-          stroke: #555!important;
+          stroke: theme('colors.material.gray.600')!important;
         }
       }
     }
   }
-})
+}
 </style>
