@@ -35,7 +35,7 @@ import Vue from 'vue';
 
 Vue.use(Chart);
 
-export default {
+export default Vue.extend({
   name: 't-chart',
 
   props: {
@@ -165,5 +165,5 @@ export default {
       }
     }
   }
-}
+})
 </style>
