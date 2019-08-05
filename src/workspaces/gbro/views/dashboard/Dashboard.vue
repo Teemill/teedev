@@ -130,7 +130,7 @@ import Vue from 'vue';
 
 Vue.component(Card.name, Card);
 
-export default {
+export default Vue.extend({
   name: 'gbro-dashboard',
 
   components: {
@@ -162,5 +162,5 @@ export default {
       },
     ],
   }),
-};
+});
 </script>
