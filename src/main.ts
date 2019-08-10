@@ -4,6 +4,10 @@ import router from './router';
 import store from './store';
 import './registerServiceWorker';
 
+import { ViewportPlugin } from './plugins';
+
+Vue.use(ViewportPlugin);
+
 Vue.config.productionTip = false;
 
 new Vue({
