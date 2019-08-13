@@ -4,7 +4,7 @@ import router from './router';
 import store from './store';
 import './registerServiceWorker';
 
-import { ViewportPlugin } from './plugins';
+import { ViewportPlugin } from './plugins/index';
 
 Vue.use(ViewportPlugin);
 
