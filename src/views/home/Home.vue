@@ -20,16 +20,10 @@
 import Vue from 'vue';
 import HelloWorld from '@/components/HelloWorld.vue'; // @ is an alias to /src
 
-import Meme from '@/meme.ts';
-
 export default Vue.extend({
   name: 'home',
   components: {
     HelloWorld,
-  },
-
-  mounted() {
-    Meme(this.$el);
   },
 });
 </script>

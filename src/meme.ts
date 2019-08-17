@@ -55,9 +55,10 @@ export default (elm: HTMLElement) => {
 
         });
 
-      node.replaceWith(
-        ...charNodes,
-      );
+      // ! Typescript kept bitching
+      // node.replaceWith(
+      //   ...charNodes,
+      // );
 
       window.requestAnimationFrame(() => {
         memeNodes.forEach((node) => {
@@ -67,16 +68,16 @@ export default (elm: HTMLElement) => {
     }
   });
 
-  window.meme = () => {
-    console.log(memeNodes);
+  // window.meme = () => {
+  //   console.log(memeNodes);
 
-    memeNodes.forEach((node) => {
-      const x = (Math.random() * 2) - 1;
-      const y = (Math.random() * 2) - 1;
+  //   memeNodes.forEach((node) => {
+  //     const x = (Math.random() * 2) - 1;
+  //     const y = (Math.random() * 2) - 1;
 
-      node.element.style.transform = `translate(${x}px, ${y}px)`;
-    });
-  };
+  //     node.element.style.transform = `translate(${x}px, ${y}px)`;
+  //   });
+  // };
 
   window.addEventListener('mousemove', (e) => {
     const mousePos: Vector = new Vector(e.x, e.y);

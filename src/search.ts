@@ -53,4 +53,4 @@ function levenshtein(a: string, b: string) {
 
 console.log(levenshtein('what', 'test'));
 
-window.test = levenshtein;
+// window.test = levenshtein;

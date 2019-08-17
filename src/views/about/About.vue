@@ -13,9 +13,8 @@
 import Vue from 'vue';
 import faker from 'faker';
 
-import { Dot } from '@teedev/core';
-
-import '@/search.ts';
+// import { Dot } from '@teedev/core';
+// import '@/search.ts';
 
 export default Vue.extend({
   name: 'page-about',
@@ -52,28 +51,28 @@ export default Vue.extend({
     },
 
     onClick(count: number) {
-      this.createData(10);
+    //   this.createData(10);
 
-      let t = performance.now();
-      console.log(Dot.getMany(
-        [
-          'name',
-          'description',
-          'test.first',
-        ],
-        this.data,
-      ).flat());
-      console.log('Time', `${(performance.now() - t).toFixed(2)}ms`);
+    //   let t = performance.now();
+    //   console.log(Dot.getMany(
+    //     [
+    //       'name',
+    //       'description',
+    //       'test.first',
+    //     ],
+    //     this.data,
+    //   ).flat());
+    //   console.log('Time', `${(performance.now() - t).toFixed(2)}ms`);
 
-      let value = 0;
-      t = performance.now();
+    //   let value = 0;
+    //   t = performance.now();
 
-      for (let i = 0; i < count; ++i) {       
-        value = window.test('save our seas', 'save');
-      }
+    //   for (let i = 0; i < count; ++i) {       
+    //     value = window.test('save our seas', 'save');
+    //   }
 
-      console.log('Time', `${(performance.now() - t).toFixed(2)}ms`);
-      console.log('Value', value);
+    //   console.log('Time', `${(performance.now() - t).toFixed(2)}ms`);
+    //   console.log('Value', value);
     },
   },
 })
