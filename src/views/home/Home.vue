@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <img class="center" alt="Vue logo" src="@/assets/logo.png">
-    Test test 123
+    Test test 1234
     <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
     <p>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque laoreet, felis in suscipit varius, ligula diam posuere sapien, ac commodo ex purus ac purus. Aliquam ut scelerisque urna. Etiam id turpis sapien. Curabitur laoreet consectetur quam quis lacinia. Phasellus aliquam fermentum sem posuere vestibulum. In dapibus elit ut tortor blandit aliquam. Fusce vitae faucibus sapien. Vivamus ut mi neque. Donec ex eros, vulputate sed suscipit vel, cursus nec tortor. Nam non lectus nec nulla aliquet faucibus quis in felis. Ut vel sodales eros. Nulla facilisi. Ut est quam, gravida sit amet orci ac, rutrum imperdiet ante. Sed id felis pharetra, semper purus vel, tincidunt nulla.
