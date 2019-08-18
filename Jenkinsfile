@@ -14,8 +14,8 @@ pipeline {
     }
     stage('NPM Install') {
       steps {
-        sh '''ls
-npm install'''
+        sh 'ls'
+        sh 'npm install'
       }
     }
     stage('Tests:unit') {
