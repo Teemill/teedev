@@ -18,5 +18,11 @@ pipeline {
         sh 'npm install'
       }
     }
+    stage('Test:unit') {
+      steps {
+        sh 'npm run test:unit'
+        sh 'ls'
+      }
+    }
   }
 }
