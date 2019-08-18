@@ -1,9 +1,15 @@
 pipeline {
   agent any
   stages {
-    stage('Slack Message') {
+    stage('npm install') {
       steps {
-        slackSend(channel: 'pipeline')
+        sh 'npm install'
+        sh 'npm --version'
+      }
+    }
+    stage('npm run test:unit') {
+      steps {
+        sh 'npm run test:unit'
       }
     }
   }
