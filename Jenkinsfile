@@ -2,29 +2,24 @@ pipeline {
   agent {
     docker {
       image 'node:latest'
-      args '-p 3000:3000'
     }
 
   }
   stages {
     stage('NPM Version') {
-      parallel {
-        stage('NPM Version') {
-          steps {
-            sh 'node -v'
-            sh 'npm --version'
-          }
-        }
-        stage('') {
-          steps {
-            sh 'ls'
-          }
-        }
+      steps {
+        sh 'node -v'
+        sh 'npm --version'
       }
     }
     stage('NPM Install') {
       steps {
         sh 'npm install'
+      }
+    }
+    stage('Tests:unit') {
+      steps {
+        sh 'npm run test:unit'
       }
     }
   }
