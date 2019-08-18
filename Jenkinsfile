@@ -8,9 +8,23 @@ pipeline {
   }
   stages {
     stage('NPM Version') {
+      parallel {
+        stage('NPM Version') {
+          steps {
+            sh 'node -v'
+            sh 'npm --version'
+          }
+        }
+        stage('') {
+          steps {
+            sh 'ls'
+          }
+        }
+      }
+    }
+    stage('NPM Install') {
       steps {
-        sh 'node -v'
-        sh 'npm --version'
+        sh 'npm install'
       }
     }
   }
