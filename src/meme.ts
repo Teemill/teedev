@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import { Vector } from '@teedev/core';
 
 const memeNodes: {

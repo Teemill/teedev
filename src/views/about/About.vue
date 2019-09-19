@@ -67,7 +67,7 @@ export default Vue.extend({
     //   let value = 0;
     //   t = performance.now();
 
-    //   for (let i = 0; i < count; ++i) {       
+    //   for (let i = 0; i < count; ++i) {
     //     value = window.test('save our seas', 'save');
     //   }
 
@@ -75,7 +75,7 @@ export default Vue.extend({
     //   console.log('Value', value);
     },
   },
-})
+});
 </script>
 
 <style lang="scss" scoped>

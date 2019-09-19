@@ -142,16 +142,16 @@ export default Vue.extend({
   data: () => ({
     chartData: [
       {
-          name: "Some Data", chartType: "line",
-          values: [25, 40, 30, 35, 8, 52, 17, 4]
+          name: 'Some Data', chartType: 'line',
+          values: [25, 40, 30, 35, 8, 52, 17, 4],
       },
       {
-          name: "Another Set", chartType: "line",
-          values: [25, 50, 10, 15, 18, 32, 27, 14]
+          name: 'Another Set', chartType: 'line',
+          values: [25, 50, 10, 15, 18, 32, 27, 14],
       },
       {
-          name: "Final Set", chartType: "line",
-          values: [14, 33, 10, 8, 23, 31, 27, 2]
+          name: 'Final Set', chartType: 'line',
+          values: [14, 33, 10, 8, 23, 31, 27, 2],
       },
     ],
     pieData: [
