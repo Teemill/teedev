@@ -2,6 +2,12 @@ const path = require('path');
 
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
+
+const StatsD = require('node-dogstatsd').StatsD;
+const dogstatsd = new StatsD();
+
+dogstatsd.increment('page.views')
+
 function resolve (dir) {
   return path.join(__dirname, dir)
 }

@@ -7,8 +7,8 @@ Vue.use(Router);
 
 const routes: RouteConfig[] = [];
 
-const workspaceRoutes = require.context('./workspaces', true, /^\.\/([\w]+)\/views\/([\w]+)\/index\.(ts|js)$/);
-const coreRoutes      = require.context('./views',      true, /^\.\/([\w]+)\/index\.(ts|js)$/);
+const workspaceRoutes = require.context('./workspaces', true, /^\.\/([\w-_]+)\/views\/([\w-_]+)\/index\.(ts|js)$/);
+const coreRoutes      = require.context('./views',      true, /^\.\/([\w-_]+)\/index\.(ts|js)$/);
 
 workspaceRoutes.keys().forEach((dir) => {
   const route: RouteConfig = workspaceRoutes(dir).default;
