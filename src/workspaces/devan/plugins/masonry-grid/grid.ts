@@ -106,11 +106,11 @@ export class Grid {
       const useableColumns = columnHeights
         .map((height, column, array) => Math.max(
           previousItem ? previousItem.position.y : 0,
-          ...array.slice(column, column + item.size.x)
+          ...array.slice(column, column + item.size.x),
         ))
         .splice(0, columnHeights.length - (item.size.x - 1));
 
-      console.log(columnHeights, useableColumns);
+      // console.log(columnHeights, useableColumns);
 
       const lowestColumn = useableColumns
         .reduce((acc, value, index, array) =>
@@ -118,8 +118,36 @@ export class Grid {
           0,
         );
 
-      item.position.x = lowestColumn;
-      item.position.y = useableColumns[lowestColumn];
+      const tolerance = 50; // item.height  * 0.4;
+
+      if (itemIndex === 9) {
+        console.log(
+          tolerance,
+          lowestColumn,
+          useableColumns[lowestColumn],
+        );
+        console.log(
+          useableColumns,
+        );
+        console.log(
+          useableColumns
+            .filter((value, index, array) => value <= array[lowestColumn] + tolerance)
+            .reduce((acc, value, index, array) =>
+              (value > array[acc]) ? index : acc,
+              lowestColumn,
+            ),
+        );
+      }
+
+      const testColumn = useableColumns
+        .filter((value, index, array) => value <= array[lowestColumn] + tolerance)
+        .reduce((acc, value, index, array) =>
+          (value > array[acc]) ? index : acc,
+          lowestColumn,
+        );
+
+      item.position.x = testColumn;
+      item.position.y = useableColumns[testColumn];
 
       item.gridPosition.x = item.position.x;
       item.gridSize.x     = item.size.x

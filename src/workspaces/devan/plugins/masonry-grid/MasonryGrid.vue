@@ -49,16 +49,25 @@ export default Vue.extend({
     const items = [];
 
     for (let i = 0; i < 1; i++) {
-      items.push(new GridItem({ width: 6, height: 600 }));
-      items.push(new GridItem({ width: 3, height: 300 }));
-      items.push(new GridItem({ width: 3, height: 300 }));
-      items.push(new GridItem({ width: 3, height: 300 }));
-      items.push(new GridItem({ width: 3, height: 300 }));
-  
-      items.push(new GridItem({ width: 6, height: 300 }));
-      items.push(new GridItem({ width: 6, height: 600 }));
-      items.push(new GridItem({ width: 3, height: 300 }));
-      items.push(new GridItem({ width: 3, height: 300 }));
+      items.push(new GridItem({ width: 2, height: 200 }));
+      items.push(new GridItem({ width: 2, height: 100 }));
+      items.push(new GridItem({ width: 2, height: 350 }));
+      items.push(new GridItem({ width: 2, height: 400 }));
+      items.push(new GridItem({ width: 2, height: 300 }));
+      items.push(new GridItem({ width: 4, height: 200 }));
+
+      items.push(new GridItem({ width: 2, height: 100 }));
+      items.push(new GridItem({ width: 2, height: 100 }));
+      items.push(new GridItem({ width: 2, height: 100 }));
+      items.push(new GridItem({ width: 2, height: 100 }));
+      items.push(new GridItem({ width: 2, height: 100 }));
+      items.push(new GridItem({ width: 2, height: 100 }));
+      items.push(new GridItem({ width: 2, height: 100 }));
+      items.push(new GridItem({ width: 2, height: 100 }));
+      items.push(new GridItem({ width: 2, height: 100 }));
+      items.push(new GridItem({ width: 2, height: 100 }));
+      items.push(new GridItem({ width: 2, height: 100 }));
+      items.push(new GridItem({ width: 2, height: 100 }));
     }
 
     this.grid = new Grid({
